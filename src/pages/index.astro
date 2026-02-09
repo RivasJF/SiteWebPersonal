@@ -1,306 +1,246 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
-import  myImage  from "../assets/icon-log.jpeg"
+
+const SOCIAL_LINKS = {
+  github: "https://github.com/RivasJF",
+  linkedin: "https://www.linkedin.com/in/jonathan-rivas-flores-0a24223a2/",
+};
 ---
 
 <Layout>
-	<div id="page">
-		<section id="target">
-			<section id="logo">
-				<div class="image-container">
-					<Image src={myImage} alt="logo" width={540} height={490}/>
-				</div>
-				<nav id="links">
-					<a href="#" class="link-item">
-						<h3>Github</h3>
-					</a>
-					<a href="#" class="link-item">
-						<h3>Gmail</h3>
-					</a>
-				</nav>
-			</section>
-			<section id="text">
-				<div class="intro-text">
-					<h1>Hola soy <code>[Anonimo]</code>.</h1>
-					<h2>Tengo <code>[##]</code> años.</h2>
-					<h2>Voy a ser un <mark>Ingeniero de Software</mark>.</h2>
-				</div>
-				<div class="tags-container">
-					<p class="tags">
-						#Javascript #AsAbove,SoBelow #Typescript #BackClover
-						#Mexico #AdventureTime #Water
-					</p>
-				</div>
-			</section>
-		</section>
-	</div>
+  <div id="page">
+    <header id="hero">
+      <div class="hero-content">
+        <h1>Jonathan Rivas Flores</h1>
+        <p>Técnico en Informática & Backend Developer</p>
+      </div>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2>Sobre mí</h2>
+        <p>
+          Tengo 21 años, soy de México. Actualmente titulado como Técnico en
+          Informática y cursando la carrera de Ingeniería en TIC's. Mi
+          especialidad y pasión es el desarrollo de software, con un enfoque en
+          el backend.
+        </p>
+      </section>
+
+      <section id="skills">
+        <div class="card">
+          <h2>My Stack</h2>
+          <ul>
+            <li>NestJS</li>
+            <li>Spring Boot</li>
+            <li>PostgreSQL</li>
+            <li>Docker</li>
+            <li>Git</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Lenguajes Favoritos</h3>
+          <ul>
+            <li>TypeScript</li>
+            <li>JavaScript</li>
+            <li>Java</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contacto</h2>
+        <div class="social-links">
+          <a href={SOCIAL_LINKS.github} target="_blank" aria-label="GitHub">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon"
+            >
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+              ></path>
+            </svg>
+          </a>
+          <a
+            href={SOCIAL_LINKS.linkedin}
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon"
+            >
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              ></path><rect x="2" y="9" width="4" height="12"></rect><circle
+                cx="4"
+                cy="4"
+                r="2"></circle>
+            </svg>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; {new Date().getFullYear()} Jonathan Rivas Flores</p>
+    </footer>
+  </div>
 </Layout>
 
 <style>
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-	}
+  :root {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --primary-color: #00bfff;
+    --card-bg: #2c2c2c;
+    --header-bg: #0c0c23;
+  }
 
-	html, body {
-		height: 100%;
-		overflow-x: hidden;
-	}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-	#page {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background-color: #000000;
-		color: aliceblue;
-		min-height: 100vh;
-		width: 100%;
-		padding: clamp(1rem, 3vw, 2rem);
-		font-family:
-			system-ui,
-			-apple-system,
-			BlinkMacSystemFont,
-			"Segoe UI",
-			Roboto,
-			Oxygen,
-			Ubuntu,
-			Cantarell,
-			"Open Sans",
-			"Helvetica Neue",
-			sans-serif;
-	}
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
+      Liberation Mono, monospace;
+    line-height: 1.6;
+  }
 
-	#target {
-		padding: clamp(1.5rem, 4vw, 3rem);
-		width: min(90vw, 800px);
-		max-width: 100%;
-		display: flex;
-		background-color: #222222;
-		border-radius: clamp(10px, 2vw, 20px);
-		align-items: center;
-		justify-content: space-between;
-		gap: clamp(1rem, 3vw, 2rem);
-		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-		backdrop-filter: blur(10px);
-		border: 1px solid rgba(255, 255, 255, 0.1);
-	}
+  #page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+  }
 
-	#logo {
-		flex: 0 0 auto;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: clamp(1rem, 2vw, 1.5rem);
-	}
+  #hero {
+    background: var(--header-bg);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-bottom: 2px solid var(--primary-color);
+  }
 
-	.image-container {
-		width: clamp(80px, 12vw, 150px);
-		height: clamp(80px, 12vw, 150px);
-		border-radius: 50%;
-		overflow: hidden;
-		position: relative;
-		border: 3px solid rgba(255, 255, 255, 0.2);
-		transition: transform 0.3s ease, border-color 0.3s ease;
-	}
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+  }
 
-	.image-container:hover {
-		transform: scale(1.05);
-		border-color: rgba(255, 255, 255, 0.4);
-	}
+  .hero-content p {
+    font-size: 1.2rem;
+    color: #a0a0a0;
+  }
 
-	img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		transition: transform 0.3s ease;
-	}
+  main {
+    flex-grow: 1;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+  }
 
-	.image-container:hover img {
-		transform: scale(1.1);
-	}
+  section {
+    margin-bottom: 3rem;
+  }
 
-	#links {
-		display: flex;
-		gap: clamp(0.5rem, 2vw, 1rem);
-		flex-wrap: wrap;
-		justify-content: center;
-	}
+  h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
 
-	.link-item {
-		text-decoration: none;
-		color: inherit;
-		padding: clamp(0.3rem, 1vw, 0.5rem) clamp(0.8rem, 2vw, 1.2rem);
-		border-radius: 20px;
-		background: rgba(255, 255, 255, 0.1);
-		transition: all 0.3s ease;
-		border: 1px solid transparent;
-	}
+  #skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
 
-	.link-item:hover {
-		background: rgba(255, 255, 255, 0.2);
-		transform: translateY(-2px);
-		border-color: rgba(255, 255, 255, 0.3);
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-	}
+  .card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
 
-	.link-item h3 {
-		font-size: clamp(0.8rem, 2vw, 1rem);
-		font-weight: 500;
-		margin: 0;
-	}
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
 
-	#text {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		gap: clamp(1rem, 3vw, 2rem);
-		min-width: 0; /* Permite que el texto se contraiga */
-	}
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
 
-	.intro-text {
-		display: flex;
-		flex-direction: column;
-		gap: clamp(0.3rem, 1vw, 0.5rem);
-	}
+  ul {
+    list-style: none;
+    padding: 0;
+  }
 
-	h1 {
-		font-size: clamp(1.2rem, 4vw, 2.2rem);
-		line-height: 1.2;
-		font-weight: 700;
-		word-wrap: break-word;
-	}
+  ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
 
-	h2 {
-		font-size: clamp(0.9rem, 3vw, 1.4rem);
-		line-height: 1.3;
-		font-weight: 400;
-		word-wrap: break-word;
-	}
+  #contact {
+    text-align: center;
+  }
 
-	code {
-		background: rgba(255, 255, 255, 0.1);
-		padding: 0.2em 0.4em;
-		border-radius: 4px;
-		font-family: 'Courier New', monospace;
-		font-size: 0.9em;
-		border: 1px solid rgba(255, 255, 255, 0.2);
-	}
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
 
-	mark {
-		background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-		color: white;
-		padding: 0.2em 0.4em;
-		border-radius: 4px;
-		font-family: "Georgia", "Times New Roman", serif;
-		font-weight: 600;
-		font-size: 0.95em;
-	}
+  .social-links a {
+    color: var(--text-color);
+    transition: color 0.3s;
+  }
 
-	.tags-container {
-		padding: clamp(0.8rem, 2vw, 1.2rem);
-		background: rgba(255, 255, 255, 0.05);
-		border-radius: 8px;
-		border-left: 4px solid #ff6b6b;
-	}
+  .social-links a:hover {
+    color: var(--primary-color);
+  }
 
-	.tags {
-		font-size: clamp(0.8rem, 2vw, 1rem);
-		line-height: 1.5;
-		color: #b8b8b8;
-		word-wrap: break-word;
-		font-style: italic;
-	}
+  .social-links .icon {
+    width: 40px;
+    height: 40px;
+  }
 
-	/* Breakpoints específicos para mejor control */
-	@media (max-width: 768px) {
-		#target {
-			flex-direction: column;
-			text-align: center;
-			padding: clamp(1.5rem, 5vw, 2rem);
-		}
-
-		#logo {
-			width: 100%;
-			margin-bottom: 0;
-		}
-
-		#text {
-			width: 100%;
-			text-align: left;
-		}
-
-		#links {
-			flex-direction: row;
-			justify-content: center;
-			width: 100%;
-		}
-
-		.image-container {
-			width: clamp(100px, 20vw, 120px);
-			height: clamp(100px, 20vw, 120px);
-		}
-	}
-
-	@media (max-width: 480px) {
-		#page {
-			padding: 0.5rem;
-		}
-
-		#target {
-			width: 100%;
-			margin: 0;
-			border-radius: 15px;
-		}
-
-		#links {
-			flex-direction: column;
-			gap: 0.5rem;
-		}
-
-		.link-item {
-			width: 100%;
-			text-align: center;
-		}
-
-		.tags {
-			font-size: 0.75rem;
-		}
-	}
-
-	@media (max-width: 320px) {
-		.intro-text {
-			gap: 0.2rem;
-		}
-		
-		h1 {
-			font-size: 1.1rem;
-		}
-		
-		h2 {
-			font-size: 0.85rem;
-		}
-	}
-
-	/* Mejoras de accesibilidad */
-	@media (prefers-reduced-motion: reduce) {
-		* {
-			animation-duration: 0.01ms !important;
-			animation-iteration-count: 1 !important;
-			transition-duration: 0.01ms !important;
-		}
-	}
-
-	/* Modo oscuro mejorado */
-	@media (prefers-color-scheme: dark) {
-		#target {
-			background-color: #1a1a1a;
-			border-color: rgba(255, 255, 255, 0.15);
-		}
-		
-		.tags-container {
-			background: rgba(255, 255, 255, 0.03);
-		}
-	}
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--header-bg);
+    color: #a0a0a0;
+    margin-top: auto;
+  }
 </style>
